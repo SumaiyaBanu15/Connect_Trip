@@ -14,11 +14,12 @@ const Footer = () => {
         <div className="flex flex-wrap gap-2">
           <div className="flex-1 basis-[10rem]">
             <Link to="/">
-              <img
+              {/* <img
                 src={mode === "dark" ? "/logo-dark.png" : "/logo-light.png"}
                 alt="logo"
                 className="w-28"
-              />
+              /> */}
+              Bharat Travel
             </Link>
             <div className="mt-3">
               <p className="text-sm">
@@ -126,7 +127,7 @@ const Footer = () => {
       </footer>
       <div className="text-center  text-muted mt-3 py-2 border-t dark:border-dark">
         <p>
-          Created By <span className="text-primary">Wabweni Brian</span> | All
+          Created By <span className="text-primary">Bharat Travels Tech Team</span> | All
           Rights Reserved. &copy;{new Date().getFullYear()}
         </p>
       </div>

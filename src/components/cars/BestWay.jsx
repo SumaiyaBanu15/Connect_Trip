@@ -2,7 +2,7 @@ const BestWay = () => {
   return (
     <div className="pt-10 pb-16">
       <div className="text-center max-w-[400px] mx-auto">
-        <h1 className="heading">better way to find your perfect car</h1>
+        <h1 className="heading">better way to find your perfect package</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
           quia eius quaerat, quas deleniti sed. Sapiente illo architecto
@@ -18,10 +18,10 @@ const BestWay = () => {
           />
           <div className="mt-3">
             <h1 className="text-lg font-semibold capitalize">
-              choose your car
+              choose your package
             </h1>
             <p className="mt-1">
-              Select a car using our advanced search filters
+              Select a package using our advanced search filters
             </p>
           </div>
         </div>

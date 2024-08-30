@@ -8,7 +8,7 @@ import { Brands, Deals, FAQs, PopularDestinations } from "../components/cars";
 const CarRental = () => {
   return (
     <div>
-      <Banner banner={CarBanner} title="Find your best rental car" />
+      <Banner banner={CarBanner} title="Find your best package" />
       <NavFilters url="/cars/search" />
       <div className="mt-5 px-[3%] md:px-[6%]">
         <BestWay />

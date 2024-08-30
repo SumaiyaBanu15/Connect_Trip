@@ -12,11 +12,11 @@ const NavFilters = ({ url }) => {
         <div className="flex-align-center gap-x-5">
           <NavLink to="/" end className="flex-align-center gap-x-2">
             <BiBed />
-            <p>Holiday</p>
+            <p>Hotels</p>
           </NavLink>
           <NavLink to="/flights" className="flex-align-center gap-x-2">
             <FaPlaneArrival />
-            <p>Flight</p>
+            <p>Flights</p>
           </NavLink>
           <NavLink to="/cars" className="flex-align-center gap-x-2">
             <GrDocumentStore/>
