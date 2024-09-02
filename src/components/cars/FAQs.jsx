@@ -9,14 +9,10 @@ const FAQs = () => {
             className="p-4 flex-1 basis-[18rem] rounded-lg bg-slate-200 border dark:bg-card-dark dark:border-dark"
           >
             <h1 className="text-lg font-semibold">
-              How is TripGuide different from other hotel booking websites
+              How is connect Trip different from other hotel booking websites
             </h1>
             <p className="mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-              ipsam, quaerat culpa incidunt quae earum similique hic ad.
-              Pariatur ipsum, ut voluptatum voluptate iusto voluptas sint
-              maiores laborum animi! Vero inventore voluptatum esse tempora
-              aliquam.
+             connect Trip stands out with hyper-personalized recommendations, seamless itinerary integration, and exclusive local insights. It emphasizes sustainability, offers dynamic pricing transparency, and provides enhanced 24/7 customer support. The platform fosters a community-driven environment with detailed reviews, rewards for engagement, and a focus on eco-friendly and off-the-beaten-path experiences. 
             </p>
           </div>
         ))}

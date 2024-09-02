@@ -65,7 +65,7 @@ function App() {
           <Route path="/flights" element={<Flights />} />
           <Route path="/cars" element={<CarRental />} />
           <Route path="/hotels/search" element={<HotelSearch />} />
-          <Route path="/cars/search" element={<CarsSearch />} />
+          <Route path="/cars/search" element={<HotelSearch />} />
           <Route path="/flights/search" element={<FlightsSearch />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/wallet" element={<Wallet />} />

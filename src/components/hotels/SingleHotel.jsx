@@ -26,7 +26,7 @@ const SingleHotel = ({
           />
         </Link>
         <div className="absolute p-2 text-white rounded-md right-2 top-2 bg-black/50">
-          <h1 className="text-2xl font-bold">${price}</h1>
+          <h1 className="text-2xl font-bold">₹{price}</h1>
         </div>
       </div>
       <div className="p-3">
@@ -58,7 +58,7 @@ const SingleHotel = ({
             </span>
           ))}
         </div>
-        <div className="mt-3 flex-center-between">
+        {/* <div className="mt-3 flex-center-between">
           <div className="flex-align-center gap-x-2">
             <BiPhone />
             <p>{phone}</p>
@@ -72,9 +72,9 @@ const SingleHotel = ({
           >
             {open_status_text}
           </span>
-        </div>
+        </div> */}
         <div className="mt-3 flex-center-between">
-          <div className="mt-3 flex-align-center gap-x-2">
+          {/* <div className="mt-3 flex-align-center gap-x-2">
             <BiGlobe />
             <a
               href={website}
@@ -82,7 +82,16 @@ const SingleHotel = ({
             >
               {website?.length > 20 ? `${website?.slice(0, 20)}...` : website}
             </a>
-          </div>
+          </div> */}
+         <span
+            className={`px-2 py-[2px] text-sm ${
+              open_status_text === "Open Now"
+                ? "text-green-500 bg-green-500/20"
+                : "text-secondaryRed bg-secondaryRed/20"
+            }`}
+          >
+            {open_status_text}
+          </span>
           <Link
             to={`/hotels/${id}/confirm-booking`}
             className="btn !py-1 border border-primary text-primary hover:bg-primary hover:text-white"

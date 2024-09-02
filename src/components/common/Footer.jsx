@@ -19,12 +19,11 @@ const Footer = () => {
                 alt="logo"
                 className="w-28"
               /> */}
-              Bharat Travel
+              Connect Trip
             </Link>
             <div className="mt-3">
               <p className="text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                harum explicabo illo, magnam vitae expedita.
+                Connect Trip  stands out with hyper-personalized recommendations, seamless itinerary integration, and exclusive local insights. It emphasizes sustainability, offers dynamic pricing transparency, and provides enhanced 24/7 customer support. 
               </p>
             </div>
           </div>

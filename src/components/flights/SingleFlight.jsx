@@ -32,7 +32,7 @@ const SingleFlight = ({ id, name, image, price }) => {
             </div>
           </div>
           <div>
-            <h1 className="text-3xl font-bold">${price}</h1>
+            <h1 className="text-3xl font-bold">₹{price}</h1>
             <button className="btn btn-primary !rounded-full mt-2">
               book now
             </button>

@@ -62,23 +62,23 @@ export const filters = [
     title: "salary range",
     filters: [
       {
-        name: "$0 - $100",
+        name: "₹0 - ₹100",
         number: 102,
       },
       {
-        name: "$101 - $200",
+        name: "₹101 - ₹200",
         number: 134,
       },
       {
-        name: "$201 - $500",
+        name: "₹201 - ₹500",
         number: 134,
       },
       {
-        name: "$751 - $1000",
+        name: "₹751 - ₹1000",
         number: 134,
       },
       {
-        name: "$1000 & Above",
+        name: "₹1000 & Above",
         number: 134,
       },
     ],

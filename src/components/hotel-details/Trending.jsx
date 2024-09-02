@@ -46,7 +46,7 @@ const Trending = () => {
                   </div>
                 </div>
                 <div className="pt-2 mt-4 border-t dark:border-t-dark">
-                  <h1 className="text-xl font-bold">${price} total</h1>
+                  <h1 className="text-xl font-bold">₹{price} total</h1>
                 </div>
               </div>
             </div>

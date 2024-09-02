@@ -61,7 +61,7 @@ const Navbar = () => {
               alt="logo"
               className="w-[7rem]"
             /> */}
-            Bharat Travel
+            Connect Trip
           </Link>
           <Link to="/" className="flex-shrink-0 !opacity-100 md:hidden">
             <img

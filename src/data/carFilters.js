@@ -92,23 +92,23 @@ export const filters = [
     title: "price range",
     filters: [
       {
-        name: "$0 - $1000",
+        name: "₹0 - ₹1000",
         number: 102,
       },
       {
-        name: "$1001 - $2000",
+        name: "₹1001 - ₹2000",
         number: 134,
       },
       {
-        name: "$2001 - $5000",
+        name: "₹2001 - ₹5000",
         number: 134,
       },
       {
-        name: "$7510 - $10000",
+        name: "₹7510 - ₹10000",
         number: 134,
       },
       {
-        name: "$10000 & Above",
+        name: "₹10000 & Above",
         number: 134,
       },
     ],

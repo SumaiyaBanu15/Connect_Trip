@@ -34,7 +34,7 @@ const TrendingCities = () => {
                     </p>
                   </div>
                   <h1>
-                    <span className="text-xl font-bold">${price}</span>
+                    <span className="text-xl font-bold">₹{price}</span>
                     <span className="text-sm opacity-80">/night</span>
                   </h1>
                   <Link

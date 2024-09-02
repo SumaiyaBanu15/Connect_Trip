@@ -16,7 +16,7 @@ const RoomPrice = () => {
             />
             <div>
               <h1 className="text-lg font-semibold">1 single room</h1>
-              <h1 className="text-xl mt-2">$240.99</h1>
+              <h1 className="text-xl mt-2">₹240.99</h1>
             </div>
             <div>
               <button className="btn btn-primary">select</button>

@@ -13,8 +13,8 @@ const CarRental = () => {
       <div className="mt-5 px-[3%] md:px-[6%]">
         <BestWay />
         <PopularDestinations />
-        <Brands />
-        <Deals />
+        {/* <Brands />
+        <Deals /> */}
         <FAQs />
       </div>
     </div>

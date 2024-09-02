@@ -5,9 +5,9 @@ const PriceDetails = () => {
     <div className="rounded-lg bg-white border dark:bg-card-dark dark:border-dark p-4">
       <div className="flex-center-between pb-2 border-b dark:border-b-dark">
         <h1>
-          <span className="text-4xl md:text-5xl font-bold">$142</span>{" "}
+          <span className="text-4xl md:text-5xl font-bold">₹142</span>{" "}
           <span className="opacity-80 text-sm">/night</span>{" "}
-          <span className="line-through opacity-80 text-sm">$182</span>
+          <span className="line-through opacity-80 text-sm">₹182</span>
         </h1>
         <div className="flex-shrink-0">
           <span className="px-1 py-[2px] text-sm text-white bg-primary rounded-full">
@@ -54,7 +54,7 @@ const PriceDetails = () => {
               <input type="checkbox" id="pets" />
               <label htmlFor="pets">Allow to bring pets</label>
             </div>
-            <p>$10</p>
+            <p>₹10</p>
           </div>
           <div className="flex-center-between mt-2">
             <div className="input-check">
@@ -66,21 +66,21 @@ const PriceDetails = () => {
               />
               <label htmlFor="breakfast">Breakfast a day per person</label>
             </div>
-            <p>$23</p>
+            <p>₹23</p>
           </div>
           <div className="flex-center-between mt-2">
             <div className="input-check">
               <input type="checkbox" id="parking" />
               <label htmlFor="parking">Parking a day</label>
             </div>
-            <p>$5</p>
+            <p>₹5</p>
           </div>
           <div className="flex-center-between mt-2">
             <div className="input-check">
               <input type="checkbox" id="pillow" />
               <label htmlFor="pillow">Extra pillow</label>
             </div>
-            <p>$10</p>
+            <p>₹10</p>
           </div>
         </div>
       </div>
@@ -89,24 +89,24 @@ const PriceDetails = () => {
         <div className="rounded-lg p-3 bg-slate-100 dark:bg-hover-color-dark">
           <div className="flex-center-between">
             <h1>1 Night</h1>
-            <p>$250</p>
+            <p>₹250</p>
           </div>
           <div className="flex-center-between mt-2">
             <h1>Discount 20%</h1>
-            <p>$200</p>
+            <p>₹200</p>
           </div>
           <div className="flex-center-between mt-2">
             <h1>Breakfast a day per person</h1>
-            <p>$10</p>
+            <p>₹10</p>
           </div>
           <div className="flex-center-between mt-2">
             <h1>Service fee</h1>
-            <p>$5</p>
+            <p>₹5</p>
           </div>
         </div>
         <div className="flex-center-between mt-5">
           <h1>Total Payment</h1>
-          <h1 className="text-xl font-bold">$215</h1>
+          <h1 className="text-xl font-bold">₹215</h1>
         </div>
         <Link
           to="/hotels/1/confirm-booking"
