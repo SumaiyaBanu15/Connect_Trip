@@ -1,8 +1,43 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
+import axios from "axios";
+import { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 const Register = () => {
+  const [data, setData] = useState({
+    fullname: "",
+
+    email: "",
+    password: ""
+  })
+  const navigation = useNavigate();
+
+  const handleChange = e => {
+    const {name, value} = e.target
+    setData({
+      ...data,
+      [name]: value
+    })
+  }
+
+  const registerUser = ()=>{
+    const {fullname, email,password} = data
+    console.log(data)
+    if(!email && !fullname && !password)
+      alert("Please fill all fields")
+    axios.post(`https://travel-backend31aug2-1.onrender.com/api/v1/tourist/register`, data).then(res => {
+      if(res.data.message === "Tourist registered Successfully"){
+        alert("Tourist registered Successfully")
+        navigation("/login")
+
+        }else{
+          alert(res.data.message) 
+        }
+
+      }
+    )
+
+  }
   return (
     <div className="min-h-screen flex-center-center pt-20">
       <div className="max-w-[450px] w-[95%] mx-auto">
@@ -35,35 +70,33 @@ const Register = () => {
         </div>
         <div className="mt-4">
           <p className="divider text-center">Or</p>
-          <div className="mt-4 bg-white border rounded-lg p-4 dark:bg-card-dark dark:border-dark">
+          <form className="mt-4 bg-white border rounded-lg p-4 dark:bg-card-dark dark:border-dark">
+
             <label htmlFor="fname" className="text-muted">
               Full Name
             </label>
             <div className="my-3">
               <input
+                name="fullname"
                 type="text"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="Brian"
+                onChange={handleChange}
+              
               />
             </div>
-            <label htmlFor="lname" className="text-muted">
-              Username
-            </label>
-            <div className="my-3">
-              <input
-                type="text"
-                className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
-                placeholder="Wabweni"
-              />
-            </div>
+
             <label htmlFor="email" className="text-muted">
               Email
             </label>
             <div className="my-3">
               <input
                 type="text"
+                name="email"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="johndoe@gmail"
+                onChange={handleChange}
+              
               />
             </div>
             <label htmlFor="password" className="text-muted">
@@ -72,11 +105,14 @@ const Register = () => {
             <div className="mt-2">
               <input
                 type="password"
+                name="password"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="Password"
+                onChange={handleChange}
+               
               />
             </div>
-          </div>
+          </form>
           <div className="mt-4 flex-center-between">
             <div className="input-check">
               <input type="checkbox" id="remember" />
@@ -87,7 +123,7 @@ const Register = () => {
             </Link>
           </div>
           <div className="mt-5">
-            <button className="btn btn-primary w-full">sign up</button>
+            <button className="btn btn-primary w-full" onClick={registerUser}>sign up</button>
           </div>
         </div>
       </div>
