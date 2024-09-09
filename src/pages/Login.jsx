@@ -1,8 +1,42 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const navigation = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+  const handleLogin = () => {
+    const {email, password } = data;
+    console.log(data);
+    if (!email && !password) alert("Please fill all fields");
+    axios
+      .post(
+        `https://travel-backend9sep-1.onrender.com/api/v1/tourist/login`,
+        data
+      )
+      .then((res) => {
+        if (res.data.message === "tourist logged In Successfully") {
+          alert("tourist logged In Successfully");
+          navigation("/");
+        } else {
+          alert(res.data.message);
+        }
+      });
+
+  }
   return (
     <div className="min-h-screen flex-center-center pt-20">
       <div className="max-w-[450px] w-[95%] mx-auto">
@@ -44,6 +78,8 @@ const Login = () => {
                 type="text"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="johndoe@gmail.com"
+                name="email"
+                onChange={handleChange}
               />
             </div>
             <label htmlFor="email" className="text-muted">
@@ -54,6 +90,8 @@ const Login = () => {
                 type="password"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="Password"
+                name="password"
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -67,7 +105,7 @@ const Login = () => {
             </Link>
           </div>
           <div className="mt-5">
-            <button className="btn btn-primary w-full">sign in</button>
+            <button className="btn btn-primary w-full" onClick={handleLogin}>sign in</button>
           </div>
         </div>
       </div>

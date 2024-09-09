@@ -31,7 +31,11 @@ import {
   ActivitiesSearch,
 } from "./pages";
 import HotelSearch from "./pages/HotelsSearch";
+import axios from "axios";
 function App() {
+  const [loggedInTourist, setLoggedInTourist] = useState(null);
+  const [error, setError] = useState('');
+ 
   const [showButton, setShowButton] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const dispatch = useDispatch();
@@ -47,9 +51,23 @@ function App() {
     dispatch(closeNotifications());
   };
 
+  const fetchTouristData = async () => {
+    try {
+      const response = await axios.get("https://travel-backend9sep-1.onrender.com/api/v1/tourist/current-tourist");
+      // Assuming the data is returned in response.data
+      setLoggedInTourist(response.data);
+    } catch (err) {
+      setError('Error fetching tourist data');
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchTouristData();
+    console.log(loggedInTourist)
   }, [route]);
+  
 
   // Loader when page is loading
   window.addEventListener("load", () => {
@@ -59,7 +77,7 @@ function App() {
   return (
     <div>
       {showLoader && <Loader />}
-      <Navbar />
+      <Navbar loggedInTourist={loggedInTourist}/>
       <div className="min-h-screen" onClick={handleCloseDropdown}>
         <Routes>
           <Route path="/" element={<Home />} />

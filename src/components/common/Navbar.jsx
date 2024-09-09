@@ -56,12 +56,12 @@ const Navbar = () => {
       <div className="flex-center-between">
         <div className="gap-1 flex-align-center md:gap-3">
           <Link to="/" className="flex-shrink-0 !opacity-100 hidden md:block">
-            {/* <img
+            <img
               src={mode === "dark" ? "/logo-dark.png" : "/logo-light.png"}
               alt="logo"
-              className="w-[7rem]"
-            /> */}
-            Connect Trip
+              className="w-[10rem]"
+            />
+            
           </Link>
           <Link to="/" className="flex-shrink-0 !opacity-100 md:hidden">
             <img

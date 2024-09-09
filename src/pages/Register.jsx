@@ -5,8 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [data, setData] = useState({
-    fullname: "",
-
+    fullName: "",
     email: "",
     password: "",
   });
@@ -21,12 +20,12 @@ const Register = () => {
   };
 
   const registerUser = () => {
-    const { fullname, email, password } = data;
+    const { fullName, email, password } = data;
     console.log(data);
-    if (!email && !fullname && !password) alert("Please fill all fields");
+    if (!email && !fullName && !password) alert("Please fill all fields");
     axios
       .post(
-        `https://travel-backend31aug2-1.onrender.com/api/v1/tourist/register`,
+        `https://travel-backend9sep-1.onrender.com/api/v1/tourist/register`,
         data
       )
       .then((res) => {
@@ -76,7 +75,7 @@ const Register = () => {
             </label>
             <div className="my-3">
               <input
-                name="fullname"
+                name="fullName"
                 type="text"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
                 placeholder="Enter Your Name"
