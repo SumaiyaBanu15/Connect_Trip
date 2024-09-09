@@ -1,43 +1,43 @@
 import axios from "axios";
 import { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [data, setData] = useState({
     fullname: "",
 
     email: "",
-    password: ""
-  })
+    password: "",
+  });
   const navigation = useNavigate();
 
-  const handleChange = e => {
-    const {name, value} = e.target
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setData({
       ...data,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const registerUser = ()=>{
-    const {fullname, email,password} = data
-    console.log(data)
-    if(!email && !fullname && !password)
-      alert("Please fill all fields")
-    axios.post(`https://travel-backend31aug2-1.onrender.com/api/v1/tourist/register`, data).then(res => {
-      if(res.data.message === "Tourist registered Successfully"){
-        alert("Tourist registered Successfully")
-        navigation("/login")
-
-        }else{
-          alert(res.data.message) 
+  const registerUser = () => {
+    const { fullname, email, password } = data;
+    console.log(data);
+    if (!email && !fullname && !password) alert("Please fill all fields");
+    axios
+      .post(
+        `https://travel-backend31aug2-1.onrender.com/api/v1/tourist/register`,
+        data
+      )
+      .then((res) => {
+        if (res.data.message === "Tourist registered Successfully") {
+          alert("Tourist registered Successfully");
+          navigation("/login");
+        } else {
+          alert(res.data.message);
         }
-
-      }
-    )
-
-  }
+      });
+  };
   return (
     <div className="min-h-screen flex-center-center pt-20">
       <div className="max-w-[450px] w-[95%] mx-auto">
@@ -71,7 +71,6 @@ const Register = () => {
         <div className="mt-4">
           <p className="divider text-center">Or</p>
           <form className="mt-4 bg-white border rounded-lg p-4 dark:bg-card-dark dark:border-dark">
-
             <label htmlFor="fname" className="text-muted">
               Full Name
             </label>
@@ -80,9 +79,8 @@ const Register = () => {
                 name="fullname"
                 type="text"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
-                placeholder="Brian"
+                placeholder="Enter Your Name"
                 onChange={handleChange}
-              
               />
             </div>
 
@@ -94,9 +92,8 @@ const Register = () => {
                 type="text"
                 name="email"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
-                placeholder="johndoe@gmail"
+                placeholder="Enter Your Email"
                 onChange={handleChange}
-              
               />
             </div>
             <label htmlFor="password" className="text-muted">
@@ -107,9 +104,8 @@ const Register = () => {
                 type="password"
                 name="password"
                 className="px-4 py-2 w-full rounded-md outline-none bg-transparent border dark:border-dark"
-                placeholder="Password"
+                placeholder="Enter Your Password"
                 onChange={handleChange}
-               
               />
             </div>
           </form>
@@ -123,7 +119,9 @@ const Register = () => {
             </Link>
           </div>
           <div className="mt-5">
-            <button className="btn btn-primary w-full" onClick={registerUser}>sign up</button>
+            <button className="btn btn-primary w-full" onClick={registerUser}>
+              sign up
+            </button>
           </div>
         </div>
       </div>
