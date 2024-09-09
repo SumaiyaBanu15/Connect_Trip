@@ -4,7 +4,7 @@ const BookedPlaceDetails = () => {
   return (
     <div className="rounded-lg bg-white border dark:bg-card-dark dark:border-dark p-4">
       <h1 className="font-semibold text-xl">
-        Switzeland Hotels and places to stay
+        Switzerland Hotels and places to stay
       </h1>
       <div className="flex-align-center gap-x-2">
         <FaStar className="text-secondaryYellow" />
@@ -25,12 +25,12 @@ const BookedPlaceDetails = () => {
         <div className="mt-3 flex-center-between">
           <div>
             <p>Check in</p>
-            <h1>Jan 27, 2023</h1>
+            <h1>sept 10, 2024</h1>
           </div>
           <div className="w-[1px] h-10 bg-slate-200 dark:bg-dark-light"></div>
           <div>
             <p>Check out</p>
-            <h1>Jan 30, 2023</h1>
+            <h1>Sept 12, 2024</h1>
           </div>
         </div>
         <div className="mt-3">
@@ -41,20 +41,20 @@ const BookedPlaceDetails = () => {
           <h1 className="heading">booked details</h1>
           <div className="mt-4">
             <div className="flex-center-between">
-              <p>$199 + 5 nights</p>
-              <h1 className="text-lg font-semibold">$836.23</h1>
+              <p>₹199 + 5 nights</p>
+              <h1 className="text-lg font-semibold">₹836.23</h1>
             </div>
             <div className="flex-center-between mt-2">
               <p>Occupancy tax fee</p>
-              <h1 className="text-lg font-semibold"> - $125</h1>
+              <h1 className="text-lg font-semibold"> - ₹125</h1>
             </div>
             <div className="flex-center-between mt-2">
               <p>Service fee</p>
-              <h1 className="text-lg font-semibold">$103</h1>
+              <h1 className="text-lg font-semibold">₹103</h1>
             </div>
             <div className="flex-center-between mt-3 bg-slate-100 dark:bg-dark-light rounded-md px-2 py-1">
               <p>Service fee</p>
-              <h1 className="text-2xl font-semibold"> $837.32</h1>
+              <h1 className="text-2xl font-semibold"> ₹837.32</h1>
             </div>
           </div>
         </div>

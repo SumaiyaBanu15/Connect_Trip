@@ -23,7 +23,10 @@ const Footer = () => {
             </Link>
             <div className="mt-3">
               <p className="text-sm">
-                Connect Trip  stands out with hyper-personalized recommendations, seamless itinerary integration, and exclusive local insights. It emphasizes sustainability, offers dynamic pricing transparency, and provides enhanced 24/7 customer support. 
+                Connect Trip stands out with hyper-personalized recommendations,
+                seamless itinerary integration, and exclusive local insights. It
+                emphasizes sustainability, offers dynamic pricing transparency,
+                and provides enhanced 24/7 customer support.
               </p>
             </div>
           </div>
@@ -32,13 +35,13 @@ const Footer = () => {
             <h2 className="text-xl font-semibold">Services</h2>
             <ul>
               <li className="my-3 text-muted">
-                <a href="#"> Travel Booking</a>
+                <a href="/">Hotel Booking</a>
               </li>
               <li className="my-3 text-muted">
-                <a href="#"> Flight Booking</a>
+                <a href="/flights"> Flight Booking</a>
               </li>
               <li className="my-3 text-muted">
-                <a href="#">Car Booking</a>
+                <a href="/activities">Activities Booking</a>
               </li>
               <li className="my-3 text-muted">
                 <a href="#">Five-star Hotels</a>
@@ -126,7 +129,8 @@ const Footer = () => {
       </footer>
       <div className="text-center  text-muted mt-3 py-2 border-t dark:border-dark">
         <p>
-          Created By <span className="text-primary">Bharat Travels Tech Team</span> | All
+          Created By{" "}
+          <span className="text-primary">Bharat Travels Tech Team</span> | All
           Rights Reserved. &copy;{new Date().getFullYear()}
         </p>
       </div>

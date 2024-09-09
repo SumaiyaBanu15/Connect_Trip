@@ -46,7 +46,7 @@ const CreditInfo = () => {
           </div>
           <div className="flex-align-center gap-3 mt-4">
             <div>
-              <label>Expity Date</label>
+              <label>Expiry Date</label>
               <input
                 type="date"
                 className="px-3 py-1 outline-none border dark:border-dark rounded-md bg-transparent w-full"

@@ -8,7 +8,7 @@ const Flights = () => {
   return (
     <div>
       <Banner banner={FlightBanner} title="Your best and comfortable flight" />
-      <NavFilters url="/flights/search" />
+      <NavFilters url="/flights/search" type={"flight"} />
       <div className="mt-5 px-[3%] md:px-[6%]">
         <BestWay />
         <Deals />

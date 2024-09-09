@@ -27,6 +27,8 @@ import {
   Register,
   Rewards,
   Wallet,
+  Activities,
+  ActivitiesSearch,
 } from "./pages";
 import HotelSearch from "./pages/HotelsSearch";
 function App() {
@@ -63,9 +65,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/hotels" element={<Home />} />
           <Route path="/flights" element={<Flights />} />
+          <Route path="/Activities" element={<Activities />} />
           <Route path="/cars" element={<CarRental />} />
           <Route path="/hotels/search" element={<HotelSearch />} />
-          <Route path="/cars/search" element={<HotelSearch />} />
+          <Route path="/activities/search" element={<ActivitiesSearch />} />
           <Route path="/flights/search" element={<FlightsSearch />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/wallet" element={<Wallet />} />
