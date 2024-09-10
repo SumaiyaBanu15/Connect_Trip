@@ -4,10 +4,10 @@ import { FiCalendar, FiHome } from "react-icons/fi";
 
 const ProfileEdit = () => {
   const [user, setUser] = useState({
-    location: "Kampala, Uganda",
-    address: "24673 Luwumu Street",
-    email: "wabwenib66@gmail.com",
-    dob: "01.01.1990",
+    location: "MP, India",
+    address: "Bhopal MP",
+    email: "vikram@gmail.com",
+    dob: new Date("1990-01-01").toISOString().split("T")[0],
     gender: "Male",
   });
 
@@ -18,9 +18,9 @@ const ProfileEdit = () => {
   return (
     <div className="mt-8">
       <div className="flex-center-between">
-        <h1 className="heading">Hi, I'm Brian</h1>
-        <div className="px-3 rounded-full bg-slate-200 dark:bg-dark-light py-1">
-          Edit your profile
+        <h1 className="heading">Hi, I'm Traveler</h1>
+        <div className="px-3 rounded-full bg-slate-200 dark:bg-dark-light py-1 cursor-pointer">
+          <button> Edit your profile</button>
         </div>
       </div>
       <div className="flex-align-center flex-col sm:flex-row gap-4 mt-4">
@@ -67,15 +67,16 @@ const ProfileEdit = () => {
 
         <div className="flex-align-center flex-col sm:flex-row gap-4 mt-4">
           <div className="flex-1 w-full sm:w-fit">
-            <p>Live in</p>
+            <p>D.O.B</p>
             <div className="mt-2 flex-align-center px-3 py-2 gap-2 border dark:border-dark rounded-md">
               <FiCalendar />
               <input
-                type="text"
+                type="date"
                 className="border-none outline-none bg-transparent w-full"
                 value={user.dob}
                 name="dob"
                 onChange={handleChange}
+                placeholder={user.dob}
               />
             </div>
           </div>
