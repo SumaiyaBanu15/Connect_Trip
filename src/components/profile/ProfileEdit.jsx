@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { BiEnvelope, BiStreetView, BiUser } from "react-icons/bi";
 import { FiCalendar, FiHome } from "react-icons/fi";
-
+import { useEffect } from "react";
+import axios from "axios";
 const ProfileEdit = () => {
   const [user, setUser] = useState({
     location: "MP, India",
@@ -14,6 +15,22 @@ const ProfileEdit = () => {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: [e.target.value] });
   };
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const response = await axios.get(
+          "https://travel-backend9sep-1.onrender.com/api/v1/tourist/current-tourist",
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }, []);
 
   return (
     <div className="mt-8">

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { FiFacebook } from "react-icons/fi";
+import { FiFacebook, FiMap, FiMapPin } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { uiStore } from "../../features/uiSlice";
@@ -11,16 +11,16 @@ const Footer = () => {
   return (
     <div className="px-[2%] md:px-[6%] mt-20 z-0">
       <footer>
-        <div className="flex flex-wrap gap-2">
-          <div className="flex-1 basis-[10rem]">
-            <Link to="/">
-              {/* <img
+        <div className="flex flex-wrap gap-2 ">
+          <div className="flex-1 basis-[10rem] ">
+            <Link to="/" className="flex-shrink-0 !opacity-100 hidden md:block">
+              <img
                 src={mode === "dark" ? "/logo-dark.png" : "/logo-light.png"}
                 alt="logo"
-                className="w-28"
-              /> */}
-              Connect Trip
+                className=" w-40 "
+              />
             </Link>
+
             <div className="mt-3">
               <p className="text-sm">
                 Connect Trip stands out with hyper-personalized recommendations,
@@ -35,19 +35,19 @@ const Footer = () => {
             <h2 className="text-xl font-semibold">Services</h2>
             <ul>
               <li className="my-3 text-muted">
+                <a href="#">Holidays Booking</a>
+              </li>
+              <li className="my-3 text-muted">
+                <a href="/activities">Activities Booking</a>
+              </li>
+              <li className="my-3 text-muted">
                 <a href="/">Hotel Booking</a>
               </li>
               <li className="my-3 text-muted">
                 <a href="/flights"> Flight Booking</a>
               </li>
               <li className="my-3 text-muted">
-                <a href="/activities">Activities Booking</a>
-              </li>
-              <li className="my-3 text-muted">
-                <a href="#">Five-star Hotels</a>
-              </li>
-              <li className="my-3 text-muted">
-                <a href="#">Travelling</a>
+                <a href="#">Traveling</a>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
                 <a href="#">Terms & Conditions</a>
               </li>
               <li className="my-3 text-muted">
-                <a href="#">Pricacy Policy</a>
+                <a href="#">Privacy Policy</a>
               </li>
             </ul>
           </div>
@@ -80,7 +80,7 @@ const Footer = () => {
                 <a href="#"> Success</a>
               </li>
               <li className="my-3 text-muted">
-                <a href="#">About TripGuide</a>
+                <a href="#">About Connect Trip</a>
               </li>
               <li className="my-3 text-muted">
                 <a href="#">Blog</a>
@@ -95,21 +95,24 @@ const Footer = () => {
           </div>
 
           <div className="flex-1 basis-[10rem] text-center md:text-left">
-            <h2 className="text-xl font-semibold">
-              Subscribe to our Newsletter
-            </h2>
-            <p className="text-muted text-sm">
-              Subscribe to be the first one to know about updates. Enter your
-              email
+            <div className=" flex items-center gap-x-1">
+              <FiMapPin />
+              <h2 className="text-xl font-semibold">Our Office Address</h2>
+            </div>
+
+            <p className="text-muted text-sm ">
+              Incubation seat No-30A; Satna Incubation Center, Behind Dhawari
+              collector's office, Satna, Madhya Pradesh-485001
             </p>
-            <div className="flex-align-center justify-center my-3">
+
+            {/* <div className="flex-align-center justify-center my-3">
               <input
                 type="text"
                 className="px-4 py-[0.35rem] card-bordered dark:shadow-none outline-none rounded-lg dark:bg-card-dark"
                 placeholder="Email Address.."
               />
               <button className="btn btn-primary -ml-2">subscribe</button>
-            </div>
+            </div> */}
             <div className="flex-center-center gap-5 my-6">
               <a href="#">
                 <FiFacebook />
@@ -130,7 +133,7 @@ const Footer = () => {
       <div className="text-center  text-muted mt-3 py-2 border-t dark:border-dark">
         <p>
           Created By{" "}
-          <span className="text-primary">Bharat Travels Tech Team</span> | All
+          <span className="text-primary">Connect Trip Tech Team</span> | All
           Rights Reserved. &copy;{new Date().getFullYear()}
         </p>
       </div>

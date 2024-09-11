@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BiBed } from "react-icons/bi";
-import { FaPlaneArrival } from "react-icons/fa";
+import { FaPlaneArrival, FaUmbrellaBeach } from "react-icons/fa";
 
 import { MdDownhillSkiing } from "react-icons/md";
 const NavFilters = ({ type, url }) => {
@@ -95,16 +95,21 @@ const NavFilters = ({ type, url }) => {
       <div className="flex-col py-3 border-0 gap-y-8 md:gap-y-0 flex-center-center md:flex-center-between md:flex-row md:border-b dark:border-dark">
         <div className="flex-align-center gap-x-5">
           <NavLink to="/" end className="flex-align-center gap-x-2">
-            <BiBed />
-            <p>Hotels</p>
+            <FaUmbrellaBeach />
+            <p>Holidays</p>
+          </NavLink>
+          <NavLink to="/activities" className="flex-align-center gap-x-2">
+            <MdDownhillSkiing />
+            <p>Activities</p>
           </NavLink>
           <NavLink to="/flights" className="flex-align-center gap-x-2">
             <FaPlaneArrival />
             <p>Flights</p>
           </NavLink>
-          <NavLink to="/activities" className="flex-align-center gap-x-2">
-            <MdDownhillSkiing />
-            <p>Activities</p>
+
+          <NavLink to="/h" end className="flex-align-center gap-x-2">
+            <BiBed />
+            <p>Hotels</p>
           </NavLink>
         </div>
         <div className="flex-align-center gap-x-2">
