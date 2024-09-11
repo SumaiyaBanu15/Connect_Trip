@@ -31,6 +31,7 @@ const Login = () => {
         if (res.data.message === "tourist logged In Successfully") {
           alert("tourist logged In Successfully");
           navigation("/");
+
         } else {
           alert(res.data.message);
         }

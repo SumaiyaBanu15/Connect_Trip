@@ -53,16 +53,31 @@ function App() {
 
   const fetchTouristData = async () => {
     try {
+      const accessToken = localStorage.getItem("accessToken"); // Retrieve token from localStorage
+  
+      if (!accessToken) {
+        setError("Access token not available");
+        return;
+      }
+  
       const response = await axios.get(
-        "https://travel-backend9sep-1.onrender.com/api/v1/tourist/current-tourist"
+        "https://travel-backend9sep-1.onrender.com/api/v1/tourist/current-tourist",
+        {
+          withCredentials: true, // For cookie-based authentication
+          headers: {
+            Authorization: `Bearer ${accessToken}`, // Send JWT token in the Authorization header
+          },
+        }
       );
       // Assuming the data is returned in response.data
       setLoggedInTourist(response.data);
+      console.log(response.data);
     } catch (err) {
       setError("Error fetching tourist data");
       console.error(err);
     }
   };
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
