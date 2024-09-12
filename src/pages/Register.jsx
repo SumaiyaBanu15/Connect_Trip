@@ -25,7 +25,7 @@ const Register = () => {
     if (!email && !fullName && !password) alert("Please fill all fields");
     axios
       .post(
-        `https://travel-backend9sep-1.onrender.com/api/v1/tourist/register`,
+        `https://travel-backend-nwtf.onrender.com/api/v1/tourist/register`,
         data
       )
       .then((res) => {

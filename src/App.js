@@ -61,7 +61,7 @@ function App() {
       }
   
       const response = await axios.get(
-        "https://travel-backend9sep-1.onrender.com/api/v1/tourist/current-tourist",
+        "https://travel-backend-nwtf.onrender.com/api/v1/tourist/current-tourist",
         {
           withCredentials: true, // For cookie-based authentication
           headers: {
@@ -71,7 +71,10 @@ function App() {
       );
       // Assuming the data is returned in response.data
       setLoggedInTourist(response.data);
+      console.log("noob")
       console.log(response.data);
+      console.log("noob")
+
     } catch (err) {
       setError("Error fetching tourist data");
       console.error(err);
@@ -83,7 +86,7 @@ function App() {
     window.scrollTo(0, 0);
     fetchTouristData();
     console.log(loggedInTourist);
-  }, [route]);
+  }, []);
 
   // Loader when page is loading
   window.addEventListener("load", () => {
