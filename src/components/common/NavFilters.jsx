@@ -5,6 +5,13 @@ import { FaPlaneArrival, FaUmbrellaBeach } from "react-icons/fa";
 
 import { MdDownhillSkiing } from "react-icons/md";
 const NavFilters = ({ type, url }) => {
+  const navItems = [
+    { to: "/", icon: <FaUmbrellaBeach />, text: "Holidays", end: true },
+    { to: "/activities", icon: <MdDownhillSkiing />, text: "Activities" },
+    { to: "/flights", icon: <FaPlaneArrival />, text: "Flights" },
+    { to: "/h", icon: <BiBed />, text: "Hotels", end: true },
+  ];
+
   const today = useMemo(() => new Date(), []);
   const tomorrow = useMemo(() => {
     const date = new Date(today);
@@ -93,24 +100,26 @@ const NavFilters = ({ type, url }) => {
   return (
     <div className="w-full p-4 bg-white dark:bg-card-dark dark:shadow-none max-w-[90%] mx-auto rounded-xl -mt-10 card-shadow">
       <div className="flex-col py-3 border-0 gap-y-8 md:gap-y-0 flex-center-center md:flex-center-between md:flex-row md:border-b dark:border-dark">
-        <div className="flex-align-center gap-x-5">
-          <NavLink to="/" end className="flex-align-center gap-x-2">
-            <FaUmbrellaBeach />
-            <p>Holidays</p>
-          </NavLink>
-          <NavLink to="/activities" className="flex-align-center gap-x-2">
-            <MdDownhillSkiing />
-            <p>Activities</p>
-          </NavLink>
-          <NavLink to="/flights" className="flex-align-center gap-x-2">
-            <FaPlaneArrival />
-            <p>Flights</p>
-          </NavLink>
-
-          <NavLink to="/h" end className="flex-align-center gap-x-2">
-            <BiBed />
-            <p>Hotels</p>
-          </NavLink>
+        <div className=" w-full md:overflow-auto overflow-y-scroll md:scrollbar-default scrollbar-hide bg-white">
+          <div className="flex-align-center md:gap-x-5 gap-x-4">
+            {navItems.map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  `flex-align-center gap-x-2 relative pb-2 ${
+                    isActive ? "text-primary" : ""
+                  } before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 before:bg-primary before:transform before:scale-x-0 before:transition-transform before:duration-300 ${
+                    isActive ? "before:scale-x-100" : ""
+                  }`
+                }
+              >
+                {item.icon}
+                <p>{item.text}</p>
+              </NavLink>
+            ))}
+          </div>
         </div>
         <div className="flex-align-center gap-x-2">
           {getOptions[4]?.roundtrip && (

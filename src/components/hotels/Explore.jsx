@@ -42,7 +42,7 @@ const Explore = () => {
         </div>
       </div>
       <div
-        className="flex-align-center  gap-x-4 overflow-auto hide-scrollbar scroll-smooth p-4"
+        className="flex-align-center gap-x-4 overflow-auto hide-scrollbar scroll-smooth p-4 scrollbar-hide"
         ref={exploreContainer}
       >
         {explore.map(
@@ -84,7 +84,7 @@ const Explore = () => {
                     <h1 className="font-bold text-xl">{name}</h1>
                   </Link>
                   <span className="bg-primary/20 text-primary px-2">
-                  ₹{price}
+                    ₹{price}
                   </span>
                 </div>
                 <p className="text-sm">{distance} to Town Center</p>
