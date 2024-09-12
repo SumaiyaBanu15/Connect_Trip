@@ -1,5 +1,5 @@
 # Getting Started with Create React App
- This Project is live at `https://travel-frontend-virid.vercel.app/`
+ This project is live on `https://travel-frontend-mu.vercel.app/`
 
 ## Available Scripts
 
