@@ -2,7 +2,6 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { BiMap } from "react-icons/bi";
 import { Tabs as TabWrapper, Tab, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-
 import {
   AddReview,
   Amenities,
@@ -44,21 +43,21 @@ const HotelDetails = () => {
           />
         </div>
         <div className="flex-1 basis-[16rem]">
-          <div className="group overflow-hidden h-[150px]">
+          <div className="group overflow-hidden h-[164px]">
             <img
               src="/images/place (32).jpg"
               alt=""
               className="group-hover:scale-125 transition-a"
             />
           </div>
-          <div className="mt-3 group overflow-hidden h-[150px]">
+          <div className="mt-3 group overflow-hidden h-[164px]">
             <img
               src="/images/place (33).jpg"
               alt=""
               className="group-hover:scale-125 transition-a"
             />
           </div>
-          <div className="mt-3 group overflow-hidden h-[150px]">
+          <div className="mt-3 group overflow-hidden h-[164px]">
             <img
               src="/images/place (34).jpg"
               alt=""

@@ -240,6 +240,14 @@ export const trendingCities = [
     price: "340.44",
     image: "/images/place (13).jpg",
   },
+  {
+    id: 7,
+    name: "Mumbai",
+    rating: "4.9",
+    number_of_reviews: 247,
+    price: "540.44",
+    image: "/images/place (13).jpg",
+  },
 ];
 
 export const travelPassions = [
