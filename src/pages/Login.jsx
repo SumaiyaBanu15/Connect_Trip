@@ -11,35 +11,35 @@ const Login = () => {
   });
   const navigation = useNavigate();
 
-  const fetchTouristData = async () => {
-    try {
-      const accessToken = localStorage.getItem("token"); // Retrieve token from localStorage
+  // const fetchTouristData = async () => {
+  //   try {
+  //     const accessToken = localStorage.getItem("token"); // Retrieve token from localStorage
   
-      if (!accessToken) {
-        console.log("Access token not available");
-        return;
-      }
+  //     if (!accessToken) {
+  //       console.log("Access token not available");
+  //       return;
+  //     }
   
-      const response = await axios.get(
-        "https://travel-backend-nwtf.onrender.com/api/v1/tourist/current-tourist",
-        {
-          withCredentials: true, // For cookie-based authentication
-          headers: {
-            Authorization: `Bearer ${accessToken}`, // Send JWT token in the Authorization header
-          },
-        }
-      );
-      // Assuming the data is returned in response.data
-      // setLoggedInTourist(response.data);
-      console.log("noob")
-      console.log(response.data);
-      console.log("noob")
+  //     const response = await axios.get(
+  //       "https://travel-backend-nwtf.onrender.com/api/v1/tourist/current-tourist",
+  //       {
+  //         withCredentials: true, // For cookie-based authentication
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}`, // Send JWT token in the Authorization header
+  //         },
+  //       }
+  //     );
+  //     // Assuming the data is returned in response.data
+  //     // setLoggedInTourist(response.data);
+  //     console.log("noob")
+  //     console.log(response.data);
+  //     console.log("noob")
 
-    } catch (err) {
-      console.log("Error fetching tourist data");
-      console.error(err);
-    }
-  };
+  //   } catch (err) {
+  //     console.log("Error fetching tourist data");
+  //     console.error(err);
+  //   }
+  // };
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +58,9 @@ const Login = () => {
         data
       )
       .then((res) => {
-        if (res.data.message === "tourist logged In Successfully") {
-          alert("tourist logged In Successfully");
-          navigation("/");
+        if (res.data.message === "Logged In Successfully") {
+          alert("Logged In Successfully");
+          navigation("/")
 
         } else {
           alert(res.data.message);
