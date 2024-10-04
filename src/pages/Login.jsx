@@ -48,26 +48,51 @@ const Login = () => {
       [name]: value,
     });
   };
-  const handleLogin = () => {
-    const {email, password } = data;
-    console.log(data);
-    if (!email && !password) alert("Please fill all fields");
-    axios
-      .post(
-        `https://travel-backend-nwtf.onrender.com/api/v1/tourist/login`,
-        data
-      )
-      .then((res) => {
-        if (res.data.message === "Logged In Successfully") {
-          alert("Logged In Successfully");
-          navigation("/")
+  // const handleLogin = () => {
+  //   const {email, password } = data;
+  //   console.log(data);
+  //   if (!email && !password) alert("Please fill all fields");
+  //   axios
+  //     .post(
+  //       `https://travel-backend-nwtf.onrender.com/api/v1/tourist/login`,
+  //       data
+  //     )
+  //     .then((res) => {
+  //       if (res.data.message === "Logged In Successfully") {
+  //         alert("Logged In Successfully");
+  //         navigation("/")
 
-        } else {
-          alert(res.data.message);
-        }
-      });
-      // fetchTouristData();
+  //       } else {
+  //         alert(res.data.message);
+  //       }
+  //     });
+  //     // fetchTouristData();
+  // }
+
+  // ------
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`https://travel-backend-nwtf.onrender.com/api/v1/tourist/login`, data )
+      const {token, user} = response.data;
+
+      // Store the token in Local Storage or Session Storage
+      localStorage.setItem('authToken', token);
+      localStorage.setItem('user', JSON.stringify(user)); //Store the User info including name
+
+      // Redirect to the home page or dashboard
+      navigation("/");
+
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        alert('Invalid email or password. Please try again.');
+      } else {
+        console.error('Login Failed:', error);
+      }
+    }
   }
+// ------
+
   return (
     <div className="min-h-screen flex-center-center pt-20">
       <div className="max-w-[450px] w-[95%] mx-auto">

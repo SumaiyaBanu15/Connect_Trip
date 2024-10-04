@@ -14,13 +14,47 @@ import {
 import Dropdown from "./DropDown";
 import Notifications from "./Notifications";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 const Navbar = () => {
   const rootDoc = document.querySelector(":root");
   const { mode } = useSelector(uiStore);
   const dispatch = useDispatch();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+  try {
+    //  Get the user details from local storage
+  const storeUser = localStorage.getItem('user');
+
+  // Check if the value exists before parsing
+  if(storeUser) {
+    const parsedUser = JSON.parse(storeUser);
+    setUser(parsedUser);
+  }
+  } catch (error) {
+    console.error("Error Parsing user from LocalStorage:" , error);
+  }
+  }, []);
+
+  const getUserInitials = () => {
+    if(!user) return ''; //Returns Empty string if user is null
+
+    // Check if firstName and lastName exists
+    if(user.firstName && user.lastName){
+      return `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
+    }
+    
+    // If there's only a name field, split it
+    if(user.name){
+      const nameParts = user.name.split(' '); //splits the name by spaces
+      const initials = nameParts.map(part => part[0]).join(''); //Get first letter from eacg parts
+      return initials.toUpperCase(); 
+    }
+    return ''; //Return  empty string if no valid name is found
+  };
+
 
   const setDarkMode = () => {
     dispatch(turnOnDarkMode());
@@ -119,12 +153,19 @@ const Navbar = () => {
               className="absolute top-0 left-0 w-full h-full dropdown-btn sm:cursor-pointer"
               onClick={() => dispatch(toggleDropdown())}
             ></div>
-            <motion.img
+            {/* <motion.img
               src="/images/avatar.png"
               alt=""
               className="w-8 h-8 rounded-full dropdown-btn"
               whileTap={{ scale: 0.5 }}
-            />
+            /> */}
+
+            <motion.div 
+                      className="w-8 h-8 rounded-full bg-gray-300 flex-center-center text-white"
+                      whileTap={{ scale: 0.5 }}
+                    >
+                      {user ? getUserInitials() : ""}
+            </motion.div>
 
             <BiCaretDown className="dropdown-btn" />
             <Dropdown />

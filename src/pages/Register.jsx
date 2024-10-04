@@ -19,24 +19,52 @@ const Register = () => {
     });
   };
 
-  const registerUser = () => {
-    const { fullName, email, password } = data;
-    console.log(data);
-    if (!email && !fullName && !password) alert("Please fill all fields");
-    axios
-      .post(
-        `https://travel-backend-nwtf.onrender.com/api/v1/tourist/register`,
-        data
-      )
-      .then((res) => {
-        if (res.data.message === "Tourist registered Successfully") {
-          alert("Tourist registered Successfully");
-          navigation("/login");
-        } else {
-          alert(res.data.message);
-        }
-      });
-  };
+  // const registerUser = () => {
+  //   const { fullName, email, password } = data;
+  //   console.log(data);
+  //   if (!email && !fullName && !password) alert("Please fill all fields");
+  //   axios
+  //     .post(
+  //       `https://travel-backend-nwtf.onrender.com/api/v1/tourist/register`,
+  //       data
+  //     )
+  //     .then((res) => {
+  //       if (res.data.message === "Tourist registered Successfully") {
+  //         alert("Tourist registered Successfully");
+  //         navigation("/login");
+  //       } else {
+  //         alert(res.data.message);
+  //       }
+  //     });
+  // };
+  
+  const registerUser = async () => {
+    const { fullName, email, password } =data;
+
+    if(!email && !fullName && !password){
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      const res = await axios.post(`https://travel-backend-nwtf.onrender.com/api/v1/tourist/register`, data);
+
+      if(res.data.message === "Tourist Registered Successfully"){
+        alert("Tourist Registered Successfully");
+
+        // Assuming the response contains the user data
+        const { user } = res.data;
+        localStorage.setItem('user', JSON.stringify(user)); //Store the user Info
+        navigation("/login");
+
+      } else{
+        alert(res.data.message);
+      }
+
+    } catch (error) {
+       console.error("Registration Failed: ", error);
+    }
+  }
   return (
     <div className="min-h-screen flex-center-center pt-20">
       <div className="max-w-[450px] w-[95%] mx-auto">
